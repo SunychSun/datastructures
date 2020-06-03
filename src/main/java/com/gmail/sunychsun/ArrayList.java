@@ -1,5 +1,7 @@
 package com.gmail.sunychsun;
 
+import java.util.Arrays;
+
 public class ArrayList implements List
 {
 
@@ -142,16 +144,7 @@ public class ArrayList implements List
             newSize = actualSize;
         }
 
-        dataArray = newArray(dataArray, newSize);
-    }
-
-    private Object[] newArray(Object[] o, int size) {
-        Object[] array = new Object[size];
-        for (int i = 0; i < o.length; i++) {
-            array[i] = o[i];
-        }
-
-        return array;
+        dataArray = Arrays.copyOf(dataArray, newSize);
     }
 
     private void checkRang(int index) {
